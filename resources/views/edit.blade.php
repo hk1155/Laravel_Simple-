@@ -11,7 +11,7 @@
     </div>
 
     @endif
-    <form action="editprod" method="post">
+    <form action="/updateprod" method="post">
         @csrf
         <input type="hidden" class="form-control" name="txthid" value="{{$data->id}}">
         <div class="form-group">

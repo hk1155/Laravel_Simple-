@@ -35,8 +35,12 @@ Route::get('/add', function () {
 Route::get('/display', 'Mycontroller@display');
 Route::get('/deleteprod/{id}', 'Mycontroller@deleteprod');
 Route::get('/editprod/{id}', 'Mycontroller@editprod');
-Route::post('/editprod', 'Mycontroller@updateprod');
+Route::post('/updateprod', 'Mycontroller@updateprod');
 Route::post('/addproduct', 'Mycontroller@addproduct');
+Route::view('/addemp','add_emp');
+Route::view('/mylogin','mylogin');
+Route::post('/submitemp','Mycontroller@submitemp');
+Route::post('/mlogin','Mycontroller@mlogin');
 
 
 
