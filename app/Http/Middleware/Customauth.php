@@ -16,8 +16,8 @@ class Customauth
     public function handle($request, Closure $next)
     {
         //echo 'Hi test done';
-        $path = $request->path();
-        echo $path;
+        //$path = $request->path();
+        //echo $path;
         return $next($request);
     }
 }

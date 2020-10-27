@@ -36,6 +36,7 @@ Route::get('/test', function () {
     Route::view('/add','add')->name("add");
     Route::post('/submitemp', 'Mycontroller@submitemp');
     Route::post('/mlogin', 'Mycontroller@mlogin');
+    Route::get('/logout','Mycontroller@logout');
 
     Auth::routes();
 

@@ -83,9 +83,16 @@ class Mycontroller extends Controller
         $credentials = $req->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->route('add');
+            return redirect('home');
         } else {
-            return redirect('/mylogin');
+            $req->session()->flash('errstatus', 'UserName or Password Is Incorrect');
+             return redirect('/mylogin');
         }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/mylogin');
     }
 }

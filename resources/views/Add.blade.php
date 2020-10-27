@@ -1,7 +1,7 @@
 @extends('layout.Master')
 @section('content')
 <div>
-    @if(Session::get('status'))
+@if (session('status'))
 
     <div class="alert alert-success alert-dismissible fade show" role="alert">
         <strong> {{Session::get('status')}}</strong>
@@ -11,7 +11,7 @@
     </div>
     @endif
 
-    @if(Session::get('loginstatus'))
+    
     <form action="addproduct" method="post">
         @csrf
         <div class="form-group">
@@ -26,6 +26,6 @@
 
         <button type="submit" class="btn btn-success">Add</button>
     </form>
-    @endif
+   
 </div>
 @endsection
