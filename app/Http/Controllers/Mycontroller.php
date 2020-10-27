@@ -7,6 +7,7 @@ use App\addrecord;
 use App\empdata;
 use Session;
 use Crypt;
+use Auth;
 
 
 class Mycontroller extends Controller
@@ -69,13 +70,22 @@ class Mycontroller extends Controller
 
     public function mlogin(Request $req)
     {
-        $user = empdata::where("username", $req->input("txtusername"))->get();
-        if (Crypt::decrypt($user[0]->password) == $req->input("txtpassword")) {
-            $req->session()->put('loginstatus', $user[0]->empname);
-            return redirect('add');
+        // $user = empdata::where("username", $req->input("txtusername"))->get();
+
+        // if (Crypt::decrypt($user[0]->password) == $req->input("txtpassword") &&  $user[0]->username == $req->input("txtusername")) {
+        //     $req->session()->put('loginstatus', $user[0]->empname);
+        //     return redirect('add');
+        // } else {
+        //     $req->session()->flash('errstatus', 'UserName or Password Is Incorrect');
+        //     return view('mylogin');
+        // }
+
+        $credentials = $req->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            return redirect()->route('add');
         } else {
-            $req->session()->flash('errstatus', 'UserName or Password Is Incorrect');
-            return view('mylogin');
+            return redirect('/mylogin');
         }
     }
 }

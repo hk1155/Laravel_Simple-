@@ -41,7 +41,7 @@
                     @endif
 
                     @if (Route::has('login'))
-                    @auth
+                    <!-- @auth -->
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('display') }}">View Data</a>
                     </li>
@@ -51,7 +51,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/addemp">Employee Registration</a>
                     </li>
-                    @endauth
+                    <!-- @endauth -->
                     @endif
                 </ul>
                 <div class="flex-center position-ref full-height">

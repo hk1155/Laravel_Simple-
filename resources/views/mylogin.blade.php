@@ -16,13 +16,13 @@
        
         <div class="form-group">
             <label for="txtproduct">User Name</label>
-            <input type="text" class="form-control" id="txtusername" name="txtusername" placeholder="User Name">
+            <input type="text" class="form-control" id="txtusername" name="email" placeholder="User Name">
 
         </div>
        
         <div class="form-group">
             <label for="txtprice">Password</label>
-            <input type="password" class="form-control" name="txtpassword" id="txtpassword" placeholder="Enter Password">
+            <input type="password" class="form-control" name="password" id="txtpassword" placeholder="Enter Password">
         </div>
 
         <button type="submit" class="btn btn-warning">Login</button>
