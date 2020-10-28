@@ -29,7 +29,7 @@
                     </li>
 
                     @if (Route::has('login'))
-                    <!-- @auth -->
+                    @auth
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('display') }}">View Data</a>
                     </li>
@@ -42,8 +42,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/logout">Logout</a>
                     </li>
-                     {{ Auth::user()->name }}
-                    <!-- @endauth -->
+
+                    @endauth
                     @endif
                     @if (Route::has('register'))
                     <li class="nav-item">
@@ -53,7 +53,7 @@
                 </ul>
                 <ul class="navbar nav mr-auto" style="float: right;">
                     <li class="nav-item">
-                       
+
                     </li>
                 </ul>
             </div>
