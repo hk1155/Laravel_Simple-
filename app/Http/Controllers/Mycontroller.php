@@ -23,7 +23,7 @@ class Mycontroller extends Controller
     {
         $add = new addrecord;
         $add->pname = $req->input('txtproduct');
-        $add->price = $req->input('txtprice');
+        $add->price = $req->input('txtprice');  
         $add->save();
         $req->session()->flash('status', $add->pname . ' ' . 'Added Successfully');
         return redirect('display');
@@ -42,7 +42,7 @@ class Mycontroller extends Controller
         $data = addrecord::find($id);
         return view('edit', ['data' => $data]);
     }
-
+    
     public function updateprod(Request $req)
     {
         $add = addrecord::find($req->input('txthid'));
